@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search URL</title>
+</head>
+
+<body>
+    <form method="post" action="{% url '<app_name>:search_url' %}">
+        {% csrf_token %}
+        <label for="url">Enter URL:</label>
+        <input type="text" name="url" id="url" required>
+        <input type="submit" value="Search">
+    </form>
+    {% if shopify_shop %}
+    <p> Shopify Shop: {{ shopify_shop }} </p>
+    {% endif %}
+</body>
+
+</html>
+
